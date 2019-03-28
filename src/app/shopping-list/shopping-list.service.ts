@@ -12,6 +12,7 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
+  // next instead of emit
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
     this.ingredientsChanged.next(this.ingredients.slice());
@@ -21,6 +22,7 @@ export class ShoppingListService {
   //   for (let ingredient of ingredients) {
   //     this.addIngredient(ingredient);
   //   }
+    // next instead of emit
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
